@@ -1,4 +1,4 @@
-写python一段代码，用于读取文件夹ready里面的“ready.xlsx”A列的数据，按照A列的数据到PMIS导出表格，然后对数据进行汇总。cookie会改变，需要定期更新。
+写python一段代码，用于读取文件夹ready里面的“ready.xlsx”A列的数据，按照A列的数据到PMIS导出表格，然后对数据进行汇总。cookie会改变，需要定期更新。更新方法：PORTAL登陆后进入PMIS，直接查看cookie里面的pmis.session.id即可。
 
     代码说明
     1、请求导出表格的请求方案：
