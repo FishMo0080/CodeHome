@@ -13,7 +13,7 @@ url = ' http://pmis.iim.gmcc.net/a/portal/overview/exportProjectTasks'      # �
 headers = {
     "Content-Type": "application/x-www-form-urlencoded",
     "User-Agent": "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729)",
-    "Cookie": "iPlanetDirectoryPro1=C8iTptTY1dkK3elnHu6jt6C_Fauzfj0pK8in6_0-ucmnKNpgJUcqaxNN222rlysBBKnVibeqEefgu7dqr7dw11E6WayA3eBErFuHn2cgELCCcUfKCrzvsjyhhFIWQJK6; LtpaToken=AAECAzY0MzNDRDE3NjQzNDA1NTdDTj0TxKoTzsQT6KQvT1U9WlEvTz1HTUNDKOlve8xX5apwRvQLie39NC9skkA=; iPlanetDirectoryPro=C8iTptTY1dkK3elnHu6jt6C_Fauzfj0pK8in6_0-ucmnKNpgJUcqaxNN222rlysBBKnVibeqEefgu7dqr7dw11E6WayA3eBErFuHn2cgELCCcUfKCrzvsjyhhFIWQJK6; LtpaToken1=AAECAzY0MzNDRDE3NjQzNDA1NTdDTj0TxKoTzsQT6KQvT1U9WlEvTz1HTUNDKOlve8xX5apwRvQLie39NC9skkA=; OATodoToDone=; LoginFlg=1; rememberme_username=1+x5GCBZ21Q3VrikZD8qJQ==; pageNo=1; pageSize=10; pmis.session.id=7c1299b1ed494903a9e820fa1b111043",
+    "Cookie": "pmis.session.id=9db1933d54bc49beadbff5ce79b5eabd",
     }
 # 以上编写请求头字典
 # 以下读取ready.xlsx文件的A列数据
@@ -26,9 +26,14 @@ for proj_id in proj_ids:
     if r.status_code == 200:
     # 打开一个新文件，将文件流写入其中
         with open(f"{proj_id}.xlsx", 'wb') as f:
+            f.write(r.content)            
+#以上直接将内容写入Excel，如果大型文件可以用一下方法，1kb读取循环安全写入。
+"""
             for chunk in r.iter_content(1024):
                 f.write(chunk)
                 r.close
+"""
+r.close  #关闭网页请求，如果不关闭有可能会由于请求太多端口问题导致暂时无法请求（这要思考一下要在循环里面关，还是在循环外面关）
 # 以下将得到的数据汇总在一个Excel文件
 workbook = openpyxl.Workbook()
 sheet_total = workbook.active
