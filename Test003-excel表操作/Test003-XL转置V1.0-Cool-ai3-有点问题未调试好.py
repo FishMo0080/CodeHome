@@ -23,7 +23,7 @@ for i in range(0, len(a_column), 6):
 # 将转换后的数据写入Excel表格中
 for i in range(len(transposed_list)):
     for j in range(len(transposed_list[i])):
-        cell = ws.cell(row=j*3+i+1, column=(j%6)+1)
+        cell = ws.cell(row=i+1, column=j+1)
         value = transposed_list[i][j]
         if value is not None:
             cell.value = value
