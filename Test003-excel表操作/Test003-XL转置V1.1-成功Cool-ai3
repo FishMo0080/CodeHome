@@ -3,7 +3,7 @@ import openpyxl
 # 打开Excel文件
 wb = openpyxl.load_workbook('U-learning（1~4月）V4.xlsx')
 
-# 选择工作表
+# 选择工作表，读数据在Sheet1
 ws = wb['Sheet1']
 
 # 获取A列单元格内容
@@ -20,6 +20,7 @@ for i in range(0, len(a_column), 6):
         row.append(None)
     transposed_list.append(row)
 
+ws = wb['Sheet2'] #写数据在Sheet2
 # 将转换后的数据写入Excel表格中
 for i in range(len(transposed_list)):
     for j in range(len(transposed_list[i])):
@@ -27,6 +28,6 @@ for i in range(len(transposed_list)):
         value = transposed_list[i][j]
         if value is not None:
             cell.value = value
-
+            
 # 保存Excel文件
 wb.save('U-learning（1~4月）V4_new.xlsx')
