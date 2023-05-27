@@ -1,0 +1,33 @@
+site = [('线路一', 'https://bd.jx.cn/'),
+        ('线路二', 'https://jx.jsonplayer.com/player/'),
+        ('线路三', 'http://jx.9jsp.com/'),
+        ('线路四', 'https://jx.aidouer.net/'),
+        ('线路五', 'http://www.wmxz.wang/video.php/')]
+
+
+site = [('线路一', 'https://jx.aidouer.net/'),
+        ('线路二', 'https://jx.jsonplayer.com/player/'),
+        ('线路三', 'https://jx.blbo.cc:4433/')]
+        http://www.niuga.cn/play.html #自己找的网站 #niuga要用?jk=而不是?url=链接
+        https://www.administrator5.com/admin.php #可用
+        https://www.1717yun.com/api/ #可用
+        https://www.1717yun.com/jx/ty.php #可用
+        https://jx.xmflv.com/ #可用，但太慢
+        https://okjx.cc/ #太慢
+        https://www.nxflv.com/ #可用
+        https://www.yemu.xyz/ #可用
+        https://jx.m3u8.tv/jiexi/ #可用入选
+        https://jx.nnxv.cn/tv.php #可用
+        https://api.qianqi.net/vip/ #未知
+        https://bd.jx.cn/ #可用入选
+        https://www.ckplayer.vip/jiexi/ #可用
+        https://www.ckmov.vip/api.php #可用
+        https://jx.playerjy.com/ #可用
+        https://2.08bk.com/ #可用
+        https://v.qq.com/x/cover/mzc00200fhhxx8d/v0046des2cr.html?ptag=360kan.tv.pay
+        https://www.8090g.cn/jiexi/ #可用入选
+        https://www.pangujiexi.cc/jiexi.php
+        https://vip.bljiex.com/?v= #可以但用v参数
+        http://jx.rdhk.net/?v= #可以但用v参数
+        https://www.ckmov.com/?url= #可用，但不清晰
+        https://jx.yparse.com/index.php?url= #可用入选,有选集，有广告但不清晰
